@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 @RepositoryRestResource
-public interface VehiculeRepository extends JpaRepository<Vehicule,String> {
+public interface  VehiculeRepository extends JpaRepository<Vehicule,String> {
 
     @Query(value = "select distinct \n" +
             "U_CLE,\n" +

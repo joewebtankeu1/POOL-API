@@ -72,6 +72,7 @@ public class RisquesServiceImpl implements RisquesService {
             } else risquesDTO.setSexe("Null");
         }
         if (risquesDTO.getFlotte().equals("FLOTTE")) risquesDTO.setPrimeTtc(0.0);
+
         return risquesDTO;
 
     }

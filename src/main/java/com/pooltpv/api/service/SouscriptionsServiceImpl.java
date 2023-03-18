@@ -3,7 +3,6 @@ package com.pooltpv.api.service;
 
 import com.pooltpv.api.dto.*;
 import com.pooltpv.api.entities.Souscriptions;
-import com.pooltpv.api.entities.Vehicule;
 import com.pooltpv.api.mappers.SouscriptionsMapper;
 import com.pooltpv.api.repositories.SouscriptionsRepository;
 import lombok.AllArgsConstructor;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service

@@ -34,12 +34,14 @@ public class VehiculeController {
 
         if(codeDemandeur.equals("fSwtr6IBYpVy8TIb")){
             codeCompagnie=20000;
-        }else if(codeDemandeur.equals("MNBgcZOMdMsTfO17")){
-            codeCompagnie=95000;
+        }else if(codeDemandeur.equals("22cDv9B3lxt6keKM")){
+            codeCompagnie=40000;
         }else if(codeDemandeur.equals("HtbUraVTXGUO9HZh")){
             codeCompagnie=65000;
         }else if(codeDemandeur.equals("IZgHUBtvC6Esqqhx")){
             codeCompagnie=90000;
+        }else if(codeDemandeur.equals("MNBgcZOMdMsTfO17")){
+            codeCompagnie=95000;
         }
                     DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-uuuu")
                             .withResolverStyle(ResolverStyle.STRICT);

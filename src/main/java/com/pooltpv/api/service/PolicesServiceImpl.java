@@ -69,6 +69,7 @@ public class PolicesServiceImpl implements PolicesService {
 
     private PolicesDTO buildRisquesDto(Polices polices) {
         PolicesDTO policesDTO = policesMapper.policesToPoliceDTO(polices);
+        List<VehiculeDTO> vehiculeDTOS = new ArrayList<>();
         if(polices.getDateEffet()==null){
             policesDTO.setExercice("0");
         }else{
@@ -94,9 +95,9 @@ public class PolicesServiceImpl implements PolicesService {
             policesDTO.setSouscripteur(souscripteurDTOMap.get(polices.getSouscripteur()));
         }
         if(polices.getImmatriculation()==null){
-            policesDTO.setVehicule(new VehiculeDTO());
+            policesDTO.setVehicule((List<VehiculeDTO>) new VehiculeDTO());
         }else{
-            policesDTO.setVehicule(vehiculeDTOMap.get(polices.getId1()));
+            policesDTO.setVehicule((List<VehiculeDTO>) vehiculeDTOMap.get(polices.getId1()));
         }
         if(polices.getId()!=null){
             policesDTO.setSouscriptions(souscriptionsDTOMap.get(polices.getId1()));

@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor @AllArgsConstructor
@@ -56,7 +57,7 @@ public class PolicesDTO {
     private Date dateEcheance;
     private SouscripteurDTO souscripteur;
     private PrimeDTO prime;
-    private VehiculeDTO vehicule;
+    private List<VehiculeDTO> vehicule;
     private SouscriptionsDTO souscriptions;
 
 }

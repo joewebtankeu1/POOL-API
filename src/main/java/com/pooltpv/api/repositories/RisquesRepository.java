@@ -14,8 +14,12 @@ public interface RisquesRepository extends JpaRepository<Risques,String> {
 
     @Query(value = "select \n" +
             "U_CLE_P, \n"  +
+            "U_CLE, \n"  +
+            "code_cie, \n"  +
+            "CODEINTESOUS, \n"  +
             "CONCAT(CONCAT(NUMEPOLI,'-'),CODEINTESOUS) AS NUMEPOLI, \n" +
             "FLOTTE, \n" +
+            "NUM_NUMEAVEN, \n" +
             "LIBTYPAV as MOUVEMENT,\n" +
             "DATESOUS, \n" +
             "DATESOUS AS HEURESOUS, \n" +
@@ -24,6 +28,7 @@ public interface RisquesRepository extends JpaRepository<Risques,String> {
              "NVL(DUREE,'-') as DUREE, \n" +
             "IMMATRICULATION,\n" +
             "ASPUISSANCE,\n" +
+            "LIBUSAAU,\n" +
             "NVL(SE,'-') as SE, \n" +
             "GENRE,\n" +
             "MARQUE,\n" +
@@ -35,18 +40,22 @@ public interface RisquesRepository extends JpaRepository<Risques,String> {
             "CATEGORIE ,\n" +
             "SOUS_CAT_NOM,\n" +
             "CHASSIS,\n" +
+            "CODEASSU,\n" +
             "CONCAT(CONCAT(ASSURE_NOM,' '),PRENASSU) AS ASSURE_NOM, \n" +
             "MOBILE ,\n" +
             "DATENAIS,\n" +
             "QUALITE,\n" +
             "SEXERISQ,\n" +
+            "PROFESSION,\n" +
             "LIBEVILL,\n" +
             "NVL(RC,0.0) AS RC,\n" +
             "NVL(DR,0.0) AS DR,\n" +
             "NVL(IC,0.0) AS IC,\n" +
-            "NVL(INC,0.0) AS BDG,\n" +
+            "NVL(BDG,0.0) AS BDG,\n" +
             "NVL(INC,0.0) AS INC,\n" +
             "NVL(VOL,0.0) AS VOL,\n" +
+            "NVL(DTA,0.0) AS DTA,\n" +
+            "NVL(DTC,0.0) AS DTC,\n" +
             "NVL(PRIME_NETTE,0.0) AS PRIME_NETTE,\n" +
             "NVL(DROIT_TIMBRE,0.0) AS DROIT_TIMBRE,\n" +
             "NVL(PRIMTOTA,0.0) AS PRIMETTC, \n" +

@@ -15,12 +15,13 @@ import java.util.Date;
 
 @Data
 @NoArgsConstructor @AllArgsConstructor
-@JsonPropertyOrder({"numPolice", "avenant", "dateEmission"
-        ,"heureEmission","dateEffet","dateExpiration","duree","immatriculation","puissance",
+@JsonPropertyOrder({"id","codeCompagnie","codeIntermediaire","numPolice","flotte", "avenant","numAvenant","dateEmission"
+        ,"heureEmission","dateEffet","dateExpiration","duree","usage","immatriculation","puissance",
 "energie","genre","libelleMarque","typeVeh","nbrePlaces","dateMc","poidsVide","valeurVenale",
-"valeurNeuve","categorie","sousCategorie","numChassis", "nomClient", "numClient", "telClient", "adresseClient",
+"valeurNeuve","categorie","sousCategorie","numChassis","codeClient", "nomClient", "numClient", "telClient", "adresseClient",
         "dateNaissance",
         "civilite",
+        "profession",
         "sexe",
         "typePiece",
         "numPiece",
@@ -28,8 +29,8 @@ import java.util.Date;
         "nationalite",
         "rc",
         "dr",
+        "bdg",
         "ipt",
-        "tr",
         "inc",
         "vol",
         "volp",
@@ -37,22 +38,20 @@ import java.util.Date;
         "volacc",
         "av",
         "primeNette",
-        "dta",
+        "droitTimbre",
         "primeTtc",
         "attestation",
         "carteRose"})
 public class RisquesDTO {
-
+    private String id;
+    private int codeCompagnie;
+    private int codeIntermediaire;
     private String numPolice;
-
-    @JsonIgnore
     private String flotte;
-
     private String avenant;
-
+    private String numAvenant;
     @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDateTime dateEmission;
-
     @Temporal(TemporalType.TIME)
     private String heureEmission;
 
@@ -64,6 +63,7 @@ public class RisquesDTO {
 
     private String duree;
 
+    private String usage;
     private String immatriculation;
 
     private Integer puissance;
@@ -92,7 +92,7 @@ public class RisquesDTO {
     private String sousCategorie;
 
     private String numChassis;
-
+    private String codeClient;
     private String nomClient;
 
     private String numClient;
@@ -108,6 +108,7 @@ public class RisquesDTO {
     private String qualite;
 
     private String civilite;
+    private String profession;
 
     private String sexe;
 
@@ -124,24 +125,17 @@ public class RisquesDTO {
     private double dr;
 
     private double ipt;
-
-    private double tr;
+    private double bdg;
 
     private double inc;
 
     private double vol;
-
-    private double volp;
-
-    private double volb;
-
-    private double volacc;
-
-    private double av;
+    private double dta;
+    private double dtc;
 
     private double primeNette;
 
-    private double dta;
+    private double droitTimbre;
 
     private double primeTtc;
 

@@ -18,9 +18,12 @@ import java.util.Date;
 @AllArgsConstructor
 public class Risques {
     @Id
-    @Column(name = "U_CLE_P")
+    @Column(name = "U_CLE")
     private String id;
-
+    @Column(name = "CODE_CIE")
+    private int codeCompagnie;
+    @Column(name = "CODEINTESOUS")
+    private int codeIntermediaire;
     @Column(name = "NUMEPOLI")
     private String numPolice;
 
@@ -30,10 +33,12 @@ public class Risques {
     @Column(name = "MOUVEMENT")
     private String avenant;
 
+    @Column(name = "NUM_NUMEAVEN")
+    private String numAvenant;
+
     @Column(name = "DATESOUS")
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDateTime dateEmission;
-
 
     @Column(name = "HEURESOUS")
     @Temporal(TemporalType.TIME)
@@ -49,6 +54,8 @@ public class Risques {
 
     @Column(name = "DUREE")
     private String duree;
+    @Column(name = "LIBUSAAU")
+    private String usage;
 
     @Column(name = "IMMATRICULATION")
     private String immatriculation;
@@ -92,6 +99,8 @@ public class Risques {
 
     @Column(name = "CHASSIS")
     private String numChassis;
+    @Column(name = "CODEASSU")
+    private String codeClient;
 
     @Column(name = "ASSURE_NOM")
     private String nomClient;
@@ -111,7 +120,8 @@ public class Risques {
 
     @Column(name = "SEXERISQ")
     private String civilite;
-
+    @Column(name = "PROFESSION")
+    private String profession;
     @Transient
     private String sexe;
 
@@ -144,12 +154,15 @@ public class Risques {
 
     @Column(name = "VOL")
     private double vol;
-
+    @Column(name = "DTA")
+    private double dta;
+    @Column(name = "DTC")
+    private double dtc;
     @Column(name = "PRIME_NETTE")
     private double primeNette;
 
     @Column(name = "DROIT_TIMBRE")
-    private double dta;
+    private double droitTimbre;
 
     @Column(name = "PRIMETTC")
     private double primeTtc;

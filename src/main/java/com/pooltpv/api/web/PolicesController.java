@@ -21,7 +21,6 @@ import java.util.TimeZone;
 
 @RestController
 @RequestMapping("/pooltpv/api/")
-
 public class PolicesController {
 
     private final PolicesService policesService;
@@ -34,14 +33,17 @@ public class PolicesController {
                                           @PathVariable(name = "dateDebut")  @DateTimeFormat(pattern = "dd-MM-yyyy") String  dateDebut,
                                           @PathVariable(name = "dateFin")  @DateTimeFormat(pattern = "dd-MM-yyyy") String  dateFin) throws Exception {
 
+
         if(codeDemandeur.equals("fSwtr6IBYpVy8TIb")){
             codeCompagnie=20000;
-        }else if(codeDemandeur.equals("MNBgcZOMdMsTfO17")){
-            codeCompagnie=95000;
+        } if(codeDemandeur.equals("22cDv9B3lxt6keKM")){
+            codeCompagnie=40000;
         }else if(codeDemandeur.equals("HtbUraVTXGUO9HZh")){
             codeCompagnie=65000;
         }else if(codeDemandeur.equals("IZgHUBtvC6Esqqhx")){
             codeCompagnie=90000;
+        }else if(codeDemandeur.equals("MNBgcZOMdMsTfO17")){
+            codeCompagnie=95000;
         }
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-uuuu")
                 .withResolverStyle(ResolverStyle.STRICT);

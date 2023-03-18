@@ -15,5 +15,4 @@ import java.util.Collection;
 public class CategorieDTO {
     public String codeCate;
     public String libeCate;
-    private Collection<Vehicule> vehicules;
 }

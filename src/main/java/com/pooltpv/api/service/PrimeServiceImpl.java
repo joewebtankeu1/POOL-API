@@ -11,7 +11,6 @@ import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
-import net.minidev.json.JSONObject;
 
 @Service
 @Transactional
@@ -28,8 +27,7 @@ public class PrimeServiceImpl implements PrimeService {
     }
 
     private PrimeDTO buildPrimeDTO(Prime prime) {
-        PrimeDTO primeDTO = primeMapper.prmeToPrimeDTO(prime);
-
+        PrimeDTO primeDTO = primeMapper.primeToPrimeDTO(prime);
         return primeDTO;
     }
 
