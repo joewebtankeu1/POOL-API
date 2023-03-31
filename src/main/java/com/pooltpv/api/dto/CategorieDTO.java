@@ -11,8 +11,8 @@ import java.util.Collection;
 
 @Data
 @NoArgsConstructor @AllArgsConstructor
-@JsonPropertyOrder({"codeSCate", "libeDure"})
+@JsonPropertyOrder({"code", "libelle"})
 public class CategorieDTO {
-    public String codeCate;
-    public String libeCate;
+    public String code;
+    public String libelle;
 }

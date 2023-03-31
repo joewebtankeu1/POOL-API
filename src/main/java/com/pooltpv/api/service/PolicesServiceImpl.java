@@ -95,9 +95,9 @@ public class PolicesServiceImpl implements PolicesService {
             policesDTO.setSouscripteur(souscripteurDTOMap.get(polices.getSouscripteur()));
         }
         if(polices.getImmatriculation()==null){
-            policesDTO.setVehicule((List<VehiculeDTO>) new VehiculeDTO());
+            policesDTO.setVehicule( new VehiculeDTO());
         }else{
-            policesDTO.setVehicule((List<VehiculeDTO>) vehiculeDTOMap.get(polices.getId1()));
+            policesDTO.setVehicule(vehiculeDTOMap.get(polices.getId1()));
         }
         if(polices.getId()!=null){
             policesDTO.setSouscriptions(souscriptionsDTOMap.get(polices.getId1()));

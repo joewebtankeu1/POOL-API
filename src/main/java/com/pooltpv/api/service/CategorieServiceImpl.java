@@ -2,9 +2,7 @@ package com.pooltpv.api.service;
 
 
 import com.pooltpv.api.dto.CategorieDTO;
-import com.pooltpv.api.dto.PrimeDTO;
 import com.pooltpv.api.entities.Categorie;
-import com.pooltpv.api.entities.Prime;
 import com.pooltpv.api.mappers.CategorieMapper;
 import com.pooltpv.api.repositories.CategorieRepository;
 import lombok.AllArgsConstructor;
@@ -25,7 +23,7 @@ public class CategorieServiceImpl implements CategorieService {
     @Override
     public List<CategorieDTO> listCategorieTO() throws NoSuchElementException {
 
-        return categorieRepository.findCategorie()
+        return categorieRepository.listCategorie()
                 .stream()
                 .map(categorie -> buildToCategorieDTo(categorie))
                 .collect(Collectors.toList());

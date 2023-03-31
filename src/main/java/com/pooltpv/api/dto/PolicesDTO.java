@@ -57,7 +57,7 @@ public class PolicesDTO {
     private Date dateEcheance;
     private SouscripteurDTO souscripteur;
     private PrimeDTO prime;
-    private List<VehiculeDTO> vehicule;
+    private VehiculeDTO vehicule;
     private SouscriptionsDTO souscriptions;
 
 }
