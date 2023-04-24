@@ -11,10 +11,6 @@ import org.mapstruct.factory.Mappers;
         componentModel = "spring"
 )
 public interface RisquesMapper {
-   //  RisquesMapper INSTANCE = Mappers.getMapper(RisquesMapper.class);
-
-    @Mapping(target ="duree", ignore= true )
-    @Mapping(target ="energie", ignore= true )
      RisquesDTO risquesToRisquesDTO(Risques risques);
 }
 

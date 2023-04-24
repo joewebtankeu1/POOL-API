@@ -20,6 +20,8 @@ public class Risques {
     @Id
     @Column(name = "U_CLE")
     private String id;
+    @Column(name = "CODEPROF")
+    private int codeProfession;
     @Column(name = "CODE_CIE")
     private int codeCompagnie;
     @Column(name = "CODEINTESOUS")
@@ -34,7 +36,7 @@ public class Risques {
     private String avenant;
 
     @Column(name = "NUM_NUMEAVEN")
-    private String numAvenant;
+    private int numAvenant;
 
     @Column(name = "DATESOUS")
     @JsonFormat(pattern = "dd-MM-yyyy")
@@ -51,8 +53,9 @@ public class Risques {
     @Column(name = "DATEECHE")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date dateExpiration;
-
     @Column(name = "DUREE")
+    private String codeDuree;
+    @Column(name = "LIBEDURE")
     private String duree;
     @Column(name = "LIBUSAAU")
     private String usage;
@@ -64,10 +67,12 @@ public class Risques {
     private Integer puissance;
 
     @Column(name = "SE")
-    private String energie;
+    private String codeEnergie;
 
+    @Column(name = "CODGENAU")
+    private String codeGenreAuto;
     @Column(name = "GENRE")
-    private String genreAuto;
+    private String genre;
 
     @Column(name = "MARQUE")
     private String libelleMarque;
@@ -105,9 +110,8 @@ public class Risques {
     @Column(name = "ASSURE_NOM")
     private String nomClient;
 
-
     @Column(name = "MOBILE")
-    private String telclient;
+    private String telClient;
 
     @Column(name = "LIBEVILL")
     private String adresseclient;
@@ -118,7 +122,7 @@ public class Risques {
     @Column(name = "QUALITE")
     private String qualite;
 
-    @Column(name = "SEXERISQ")
+    @Column(name = "CIVILITES")
     private String civilite;
     @Column(name = "PROFESSION")
     private String profession;
@@ -172,4 +176,9 @@ public class Risques {
 
     @Transient
     private String carteRose;
+
+    @Column(name = "CODTYPAV")
+    private int codeMouvement;
+
+
 }

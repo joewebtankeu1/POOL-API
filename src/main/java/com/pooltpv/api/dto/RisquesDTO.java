@@ -15,12 +15,13 @@ import java.util.Date;
 
 @Data
 @NoArgsConstructor @AllArgsConstructor
-@JsonPropertyOrder({"id","codeCompagnie","codeIntermediaire","numPolice","flotte", "avenant","numAvenant","dateEmission"
-        ,"heureEmission","dateEffet","dateExpiration","duree","usage","immatriculation","puissance",
-"energie","genre","libelleMarque","typeVeh","nbrePlaces","dateMc","poidsVide","valeurVenale",
+@JsonPropertyOrder({"id","codeCompagnie","codeIntermediaire","numPolice","flotte","codeMouvement", "avenant","numAvenant","dateEmission"
+        ,"heureEmission","dateEffet","dateExpiration","codeDuree","duree","usage","immatriculation","puissance",
+"codeEnergie","codeGenreAuto","genre","libelleMarque","typeVeh","nbrePlaces","dateMc","poidsVide","valeurVenale",
 "valeurNeuve","categorie","sousCategorie","numChassis","codeClient", "nomClient", "numClient", "telClient", "adresseClient",
         "dateNaissance",
         "civilite",
+        "codeProfession",
         "profession",
         "sexe",
         "typePiece",
@@ -49,7 +50,7 @@ public class RisquesDTO {
     private String numPolice;
     private String flotte;
     private String avenant;
-    private String numAvenant;
+    private int numAvenant;
     @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDateTime dateEmission;
     @Temporal(TemporalType.TIME)
@@ -61,6 +62,8 @@ public class RisquesDTO {
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date dateExpiration;
 
+    private String codeDuree;
+
     private String duree;
 
     private String usage;
@@ -68,9 +71,10 @@ public class RisquesDTO {
 
     private Integer puissance;
 
-    private String energie;
+    private String codeEnergie;
 
-    private String genreAuto;
+    private String codeGenreAuto;
+    private String genre;
 
     private String libelleMarque;
 
@@ -108,6 +112,7 @@ public class RisquesDTO {
     private String qualite;
 
     private String civilite;
+    private String codeProfession;
     private String profession;
 
     private String sexe;
@@ -142,5 +147,6 @@ public class RisquesDTO {
     private String attestation;
 
     private String carteRose;
+    private int codeMouvement;
 
 }

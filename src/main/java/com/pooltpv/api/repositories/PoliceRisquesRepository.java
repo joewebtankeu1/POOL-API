@@ -19,12 +19,22 @@ public interface PoliceRisquesRepository extends JpaRepository<PoliceRisques,Str
             "    CONCAT(CONCAT(NUMEPOLI,\n" +
             "    '-'),\n" +
             "    CODEINTE) AS NUMEPOLI,\n" +
+            "    CODECATE,\n" +
             "    CODEINTE,\n" +
             "    DATESOUS,\n" +
             "    DATEEFFE,\n" +
             "    DATEECHE,\n" +
+            "    CODEDURE,\n" +
+            "    CODTYPAV,\n" +
             "    LIBTYPAV as MOUVEMENT,\n" +
             "    NUMEAVEN,\n" +
+            "    CODEASSU,\n" +
+            "    RAISSOCI,\n" +
+            "    PRENASSU,\n" +
+            "    ADREASSU,\n" +
+            "    CODEPROF,\n" +
+            "    LIBEPROF,\n" +
+            "    GENRASSU,\n" +
             "    NUMEQUIT,\n" +
             "    PRIMTOTA,\n" +
             "    PRIMNETT,\n" +

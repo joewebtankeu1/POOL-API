@@ -26,10 +26,14 @@ public class PoliceRisques {
     private int codeIntermediaire;
     @Column(name = "NUMEPOLI")
     private String numPolice;
+    @Column(name = "CODECATE")
+    private int codeCategorie;
+    @Column(name = "CODTYPAV")
+    private int codeMouvement;
     @Column(name = "MOUVEMENT")
     private String avenant;
     @Column(name = "NUMEAVEN")
-    private String numAvenant;
+    private int numAvenant;
     @Column(name = "NOMBRE_VEHICULE")
     private int nombreVehicule;
     @Column(name = "DATESOUS")
@@ -41,6 +45,20 @@ public class PoliceRisques {
     @Column(name = "DATEECHE")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date dateExpiration;
+    @Column(name = "CODEDURE")
+    private String codeDuree;
+    @Column(name = "CODEASSU")
+    private String codeAssure;
+    @Column(name = "RAISSOCI")
+    private String nomAssure;
+    @Column(name = "PRENASSU")
+    private String prenomAssure;
+    @Column(name = "ADREASSU")
+    private String adresseAssure;
+    @Column(name = "CODEPROF")
+    private int codeProfession;
+    @Column(name = "GENRASSU")
+    private String genreAssure;
     @Column(name = "NUMEQUIT")
     private String numeroQuittance;
     @Column(name = "PRIMNETT")

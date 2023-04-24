@@ -34,32 +34,6 @@ public class RisquesServiceImpl implements RisquesService {
 
     private RisquesDTO buildRisquesDto(Risques risques) {
         RisquesDTO risquesDTO = risquesMapper.risquesToRisquesDTO(risques);
-        if (risques.getEnergie() == null) {
-            risquesDTO.setEnergie("Null");
-        } else {
-            if (risques.getEnergie().equals("E")) {
-                risquesDTO.setEnergie("Essence");
-            } else if (risques.getEnergie().equals("D")) {
-                risquesDTO.setEnergie("Diesel");
-            }
-        }
-
-        if (risques.getDuree() == null) {
-            risquesDTO.setDuree("Null");
-        } else {
-            //DureeDTO dureeDTO =  dureeDTOMap.get(risque.getDuree());
-
-            if (risques.getDuree().equals("3M")) {
-                risquesDTO.setDuree("90");
-            } else if (risques.getDuree().equals("6M")) {
-                risquesDTO.setDuree("180");
-            } else if (risques.getDuree().equals("9M")) {
-                risquesDTO.setDuree("270");
-            } else if (risques.getDuree().equals("12M")) {
-                risquesDTO.setDuree("365");
-            }
-        }
-
         if (risquesDTO.getQualite().equals("PM")) {
             risquesDTO.setSexe("Null");
         } else {
