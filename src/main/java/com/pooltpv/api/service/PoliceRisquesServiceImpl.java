@@ -52,9 +52,6 @@ public class PoliceRisquesServiceImpl implements PoliceRisquesService {
             policeRisquesDTO.setFlotte("Mono");
         }
 
-        if(policeRisques.getNumAvenant()==null){
-            policeRisquesDTO.setNumAvenant("0");
-        }
         //policeRisquesDTO.setRisques(risqueMap.get(policeRisques.getId()));
         return  policeRisquesDTO;
     }

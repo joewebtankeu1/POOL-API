@@ -19,17 +19,20 @@ public interface RisquesRepository extends JpaRepository<Risques,String> {
             "CODEINTESOUS, \n"  +
             "CONCAT(CONCAT(NUMEPOLI,'-'),CODEINTESOUS) AS NUMEPOLI, \n" +
             "FLOTTE, \n" +
-            "NUM_NUMEAVEN, \n" +
+            "NVL(NUM_NUMEAVEN,\n" +
+            "  0) AS NUM_NUMEAVEN, \n" +
             "LIBTYPAV as MOUVEMENT,\n" +
             "DATESOUS, \n" +
             "DATESOUS AS HEURESOUS, \n" +
             "DATEFFET, \n" +
-           "DATEECHE, \n" +
-             "NVL(DUREE,'-') as DUREE, \n" +
+            "DATEECHE, \n" +
+            "NVL(DUREE,'-') as DUREE, \n" +
+            "NVL(LIBEDURE,'-') as LIBEDURE, \n" +
             "IMMATRICULATION,\n" +
             "ASPUISSANCE,\n" +
             "LIBUSAAU,\n" +
             "NVL(SE,'-') as SE, \n" +
+            "CODGENAU,\n" +
             "GENRE,\n" +
             "MARQUE,\n" +
             "TYPEVEHI,\n" +
@@ -46,6 +49,7 @@ public interface RisquesRepository extends JpaRepository<Risques,String> {
             "DATENAIS,\n" +
             "QUALITE,\n" +
             "SEXERISQ,\n" +
+            "CODEPROF,\n" +
             "PROFESSION,\n" +
             "LIBEVILL,\n" +
             "NVL(RC,0.0) AS RC,\n" +
@@ -59,7 +63,9 @@ public interface RisquesRepository extends JpaRepository<Risques,String> {
             "NVL(PRIME_NETTE,0.0) AS PRIME_NETTE,\n" +
             "NVL(DROIT_TIMBRE,0.0) AS DROIT_TIMBRE,\n" +
             "NVL(PRIMTOTA,0.0) AS PRIMETTC, \n" +
-            "ATTESTATION \n" +
+            "ATTESTATION, \n" +
+            "CODTYPAV, \n" +
+            "CIVILITES \n" +
             "from ORASSADM.CIE_POOL_POL_RISQUE \n"+
             "WHERE code_cie=:codeCompagnie \n"+
             "and DATESOUS between :dateDebut and  :dateFin \n"
