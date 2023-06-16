@@ -12,7 +12,7 @@ import java.util.Date;
 
 @Data
 @NoArgsConstructor @AllArgsConstructor
-@JsonPropertyOrder({"codeCompagnie","codeIntermediaire","numPolice","codeCategorie","flotte","nombreVehicule", "codeMouvement", "avenant","numAvenant","dateEmission"
+@JsonPropertyOrder({"codeCompagnie","codeIntermediaire","numPolice","codeCategorie","flotte","nombreVehicule", "codeTypeAvenant", "avenant","numAvenant","dateEmission"
         ,"heureEmission","dateEffet","dateExpiration","codeDuree","codeAssure","nomAssure","prenomAssure","adresseAssure","codeProfession","genreAssure",
         "numeroQuittance",
         "primeNette",
@@ -32,7 +32,7 @@ public class PoliceRisquesDTO {
     private int codeCategorie;
     private String flotte;
     private int nombreVehicule;
-    private int codeMouvement;
+    private int codeTypeAvenant;
     private String avenant;
     private int numAvenant;
     @JsonFormat(pattern="yyyy-MM-dd")

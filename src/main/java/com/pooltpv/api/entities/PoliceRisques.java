@@ -29,7 +29,7 @@ public class PoliceRisques {
     @Column(name = "CODECATE")
     private int codeCategorie;
     @Column(name = "CODTYPAV")
-    private int codeMouvement;
+    private int codeTypeAvenant;
     @Column(name = "MOUVEMENT")
     private String avenant;
     @Column(name = "NUMEAVEN")

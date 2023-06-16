@@ -57,8 +57,8 @@ public class Risques {
     private String codeDuree;
     @Column(name = "LIBEDURE")
     private String duree;
-    @Column(name = "LIBUSAAU")
-    private String usage;
+    @Column(name = "CODUSAAU")
+    private String codeUsage;
 
     @Column(name = "IMMATRICULATION")
     private String immatriculation;
@@ -112,9 +112,10 @@ public class Risques {
 
     @Column(name = "MOBILE")
     private String telClient;
-
-    @Column(name = "LIBEVILL")
+    @Column(name = "ADREASSU")
     private String adresseclient;
+    @Column(name = "CODEVILL")
+    private String codeVille;
 
     @Column(name = "DATENAIS")
     private Date dateNaissance;
@@ -178,7 +179,7 @@ public class Risques {
     private String carteRose;
 
     @Column(name = "CODTYPAV")
-    private int codeMouvement;
+    private int codeTypeAvenant;
 
 
 }

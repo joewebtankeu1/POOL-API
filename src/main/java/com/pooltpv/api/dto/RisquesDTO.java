@@ -15,10 +15,10 @@ import java.util.Date;
 
 @Data
 @NoArgsConstructor @AllArgsConstructor
-@JsonPropertyOrder({"id","codeCompagnie","codeIntermediaire","numPolice","flotte","codeMouvement", "avenant","numAvenant","dateEmission"
-        ,"heureEmission","dateEffet","dateExpiration","codeDuree","duree","usage","immatriculation","puissance",
+@JsonPropertyOrder({"id","codeCompagnie","codeIntermediaire","numPolice","flotte","codeTypeAvenant", "avenant","numAvenant","dateEmission"
+        ,"heureEmission","dateEffet","dateExpiration","codeDuree","duree","codeUsage","immatriculation","puissance",
 "codeEnergie","codeGenreAuto","genre","libelleMarque","typeVeh","nbrePlaces","dateMc","poidsVide","valeurVenale",
-"valeurNeuve","categorie","sousCategorie","numChassis","codeClient", "nomClient", "numClient", "telClient", "adresseClient",
+"valeurNeuve","categorie","sousCategorie","numChassis","codeClient", "nomClient", "numClient", "telClient", "adresseClient","codeVille",
         "dateNaissance",
         "civilite",
         "codeProfession",
@@ -54,7 +54,7 @@ public class RisquesDTO {
     @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDateTime dateEmission;
     @Temporal(TemporalType.TIME)
-    private String heureEmission;
+    private Date heureEmission;
 
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date dateEffet;
@@ -66,7 +66,7 @@ public class RisquesDTO {
 
     private String duree;
 
-    private String usage;
+    private String codeUsage;
     private String immatriculation;
 
     private Integer puissance;
@@ -98,12 +98,12 @@ public class RisquesDTO {
     private String numChassis;
     private String codeClient;
     private String nomClient;
-
     private String numClient;
 
     private String telClient;
 
     private String adresseClient;
+    private String codeVille;
 
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date dateNaissance;
@@ -137,7 +137,6 @@ public class RisquesDTO {
     private double vol;
     private double dta;
     private double dtc;
-
     private double primeNette;
 
     private double droitTimbre;
@@ -147,6 +146,6 @@ public class RisquesDTO {
     private String attestation;
 
     private String carteRose;
-    private int codeMouvement;
+    private int codeTypeAvenant;
 
 }

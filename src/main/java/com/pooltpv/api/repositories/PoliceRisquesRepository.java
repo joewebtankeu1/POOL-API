@@ -27,7 +27,7 @@ public interface PoliceRisquesRepository extends JpaRepository<PoliceRisques,Str
             "    CODEDURE,\n" +
             "    CODTYPAV,\n" +
             "    LIBTYPAV as MOUVEMENT,\n" +
-            "    NUMEAVEN,\n" +
+            "    NVL(NUMEAVEN, 0) as NUMEAVEN,\n" +
             "    CODEASSU,\n" +
             "    RAISSOCI,\n" +
             "    PRENASSU,\n" +

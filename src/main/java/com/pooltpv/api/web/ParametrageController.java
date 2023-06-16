@@ -3,11 +3,17 @@ package com.pooltpv.api.web;
 import com.pooltpv.api.dto.*;
 import com.pooltpv.api.service.*;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/pooltpv/api/conf/")
@@ -21,6 +27,8 @@ public class ParametrageController {
     private final EnergieService energieService;
     private final CiviliteService civiliteService;
     private final TypeAvenantService typeAvenantService;
+    private final UsageService usageService;
+    private final ReferenceVehiculeService referenceVehiculeService;
 
 
     @GetMapping(path = "/duree")
@@ -57,9 +65,38 @@ public class ParametrageController {
         return  civiliteService.listCiviliteDTO();
     }
 
-    @GetMapping(path = "/type_avenant")
+    @GetMapping(path = "/type-avenant")
     public List<TypeAvenantDTO> getTypeAvenant() throws Exception {
 
         return   typeAvenantService.listTypeAvenantDTO();
     }
+    @GetMapping(path = "/usage-auto")
+    public List<UsageDTO> getUsageAuto() throws Exception {
+
+        return   usageService.listUsageDTO();
+    }
+
+    @GetMapping(path = "/reference-vehicule/page={page}&size={size}")
+    public ResponseEntity<Map<String, Object>>  getListReferenceVehicule( @PathVariable(value = "page",required = false) int page,
+                                                                          @PathVariable(value = "size",required = false) int size
+    ) throws Exception {
+            try {
+                List<ReferenceVehiculeDTO> referenceVehiculeDTOS = new ArrayList<ReferenceVehiculeDTO>();
+                Pageable paging = PageRequest.of(page, size);
+
+
+                Page<ReferenceVehiculeDTO> pageTuts = referenceVehiculeService.listeReferenceVehicule(paging,size);
+                referenceVehiculeDTOS = pageTuts.getContent();
+
+                Map<String, Object> response = new HashMap<>();
+                response.put("ReferenceAuto", referenceVehiculeDTOS);
+                response.put("currentPage", pageTuts.getNumber());
+                response.put("totalItems", pageTuts.getTotalElements());
+                response.put("totalPages", pageTuts.getTotalPages());
+
+                return new ResponseEntity<>(response, HttpStatus.OK);
+            } catch (Exception e) {
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+        }
 }

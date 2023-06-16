@@ -26,10 +26,13 @@ public interface RisquesRepository extends JpaRepository<Risques,String> {
             "DATESOUS AS HEURESOUS, \n" +
             "DATEFFET, \n" +
             "DATEECHE, \n" +
+            "ADREASSU, \n" +
+            "NVL(CODEVILL,0) as CODEVILL, \n" +
             "NVL(DUREE,'-') as DUREE, \n" +
             "NVL(LIBEDURE,'-') as LIBEDURE, \n" +
             "IMMATRICULATION,\n" +
             "ASPUISSANCE,\n" +
+            "CODUSAAU,\n" +
             "LIBUSAAU,\n" +
             "NVL(SE,'-') as SE, \n" +
             "CODGENAU,\n" +

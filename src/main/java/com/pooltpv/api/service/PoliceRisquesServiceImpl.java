@@ -51,8 +51,6 @@ public class PoliceRisquesServiceImpl implements PoliceRisquesService {
         }else{
             policeRisquesDTO.setFlotte("Mono");
         }
-
-        //policeRisquesDTO.setRisques(risqueMap.get(policeRisques.getId()));
         return  policeRisquesDTO;
     }
 
