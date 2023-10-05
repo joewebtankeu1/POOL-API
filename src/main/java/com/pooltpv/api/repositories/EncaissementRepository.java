@@ -14,25 +14,21 @@ import java.util.List;
 public interface EncaissementRepository extends JpaRepository<Encaissement,String> {
 
     @Query(value = "select \n" +
-                "    case when NATUMOUV='ANNUL' then 'ANNUL' \n" +
-                "    else case when CODTYPQU='R' then 'RISTR'\n" +
-                "    else 'EMISS' end end  NATURMOUV,\n" +
                 "    NUMEQUIT,\n" +
                 "    NUMEENCA,\n" +
+                "    NUMEPOLI,\n" +
+                "    nvl(NUMEAVEN,999) as NUMEAVEN, \n" +
+                "    case when NATUMOUV='ANNUL' then 'ANNUL' \n" +
+                "    else case when CODTYPQU='R' then 'RISTR'\n" +
+                "    else 'EMISS' end end  NATUMOUV,\n" +
+                "    CODEASSU,\n" +
                 "    DATEENCA,\n" +
                 "    MODEPAIE,\n" +
                 "    REFEENCA,\n" +
                 "    NUMECHEQ,\n" +
-                "    DATEVALI,\n" +
-                "    CREE_PAR,\n" +
-                "    CREE__LE,\n" +
-                "    DATEANNU,\n" +
-                "    ANNU_PAR,\n" +
-                "    CODEASSU,\n" +
-                "    CODECATE,\n" +
-                "    CODEINTE,\n" +
-                "    NUMEPOLI,\n" +
-                "    nvl(NUMEAVEN,999)\n" +
+                "    MONTENCA,\n" +
+                "    PRIMTOTA,\n" +
+                "    SORTQUIT\n" +
                 "from ORASSADM.P_ENCAISSEMENT_QUITTANCE \n" +
                 "WHERE code_cie=:codeCompagnie \n"+
                 "and DATEENCA between :dateDebut and  :dateFin \n"

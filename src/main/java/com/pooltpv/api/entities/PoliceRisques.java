@@ -62,19 +62,19 @@ public class PoliceRisques {
     @Column(name = "NUMEQUIT")
     private String numeroQuittance;
     @Column(name = "PRIMNETT")
-    private double primeNette;
+    private int primeNette;
     @Column(name = "ACCEQUIT")
-    private double accessoire;
+    private int accessoire;
     @Column(name = "TAXEQUI2")
-    private double tva;
+    private int tva;
     @Column(name = "FC")
-    private double fc;
+    private int fc;
     @Column(name = "CARTE_ROSE")
-    private double carteRose;
+    private int carteRose;
     @Column(name = "TIMBGRAD")
-    private double droitTimbre;
+    private int droitTimbre;
     @Column(name = "PRIMTOTA")
-    private double primeTtc;
+    private int primeTtc;
 
     @Column(name = "ETATQUIT")
     private String etatEncaissement;

@@ -123,6 +123,9 @@ public class Risques {
     @Column(name = "QUALITE")
     private String qualite;
 
+    @Column(name = "CODECIVIL")
+    private String codeCivil;
+
     @Column(name = "CIVILITES")
     private String civilite;
     @Column(name = "PROFESSION")
@@ -143,34 +146,34 @@ public class Risques {
     private String nationalite;
 
     @Column(name = "RC")
-    private double rc;
+    private Long rc;
 
     @Column(name = "DR")
-    private double dr;
+    private Long dr;
 
     @Column(name = "IC")
-    private double ipt;
+    private Long ipt;
 
     @Column(name = "BDG")
-    private double bdg;
+    private Long bdg;
 
     @Column(name = "INC")
-    private double inc;
+    private Long inc;
 
     @Column(name = "VOL")
-    private double vol;
+    private Long vol;
     @Column(name = "DTA")
-    private double dta;
+    private Long dta;
     @Column(name = "DTC")
-    private double dtc;
+    private Long dtc;
     @Column(name = "PRIME_NETTE")
-    private double primeNette;
+    private Long primeNette;
 
     @Column(name = "DROIT_TIMBRE")
-    private double droitTimbre;
+    private Long droitTimbre;
 
     @Column(name = "PRIMETTC")
-    private double primeTtc;
+    private Long primeTtc;
 
     @Column(name = "ATTESTATION")
     private String attestation;

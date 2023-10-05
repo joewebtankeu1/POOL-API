@@ -27,6 +27,7 @@ public class EncaissementServiceImpl implements EncaissementService {
                 .stream()
                 .map(encaissement -> {
                     try {
+                     
                         return buildToDTO(encaissement);
                     } catch (ParseException e) {
                         throw new RuntimeException(e);

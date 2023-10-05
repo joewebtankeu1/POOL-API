@@ -19,7 +19,7 @@ import java.util.Date;
         ,"heureEmission","dateEffet","dateExpiration","codeDuree","duree","codeUsage","immatriculation","puissance",
 "codeEnergie","codeGenreAuto","genre","libelleMarque","typeVeh","nbrePlaces","dateMc","poidsVide","valeurVenale",
 "valeurNeuve","categorie","sousCategorie","numChassis","codeClient", "nomClient", "numClient", "telClient", "adresseClient","codeVille",
-        "dateNaissance",
+        "dateNaissance","codeCivil",
         "civilite",
         "codeProfession",
         "profession",
@@ -110,7 +110,7 @@ public class RisquesDTO {
 
     @JsonIgnore
     private String qualite;
-
+    private String codeCivil;
     private String civilite;
     private String codeProfession;
     private String profession;
@@ -125,23 +125,23 @@ public class RisquesDTO {
 
     private String nationalite;
 
-    private double rc;
+    private Long rc;
 
-    private double dr;
+    private Long dr;
 
-    private double ipt;
-    private double bdg;
+    private Long ipt;
+    private Long bdg;
 
-    private double inc;
+    private Long inc;
 
-    private double vol;
-    private double dta;
-    private double dtc;
-    private double primeNette;
+    private Long vol;
+    private Long dta;
+    private Long dtc;
+    private Long primeNette;
 
-    private double droitTimbre;
+    private Long droitTimbre;
 
-    private double primeTtc;
+    private Long primeTtc;
 
     private String attestation;
 

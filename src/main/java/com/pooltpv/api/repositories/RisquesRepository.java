@@ -55,19 +55,20 @@ public interface RisquesRepository extends JpaRepository<Risques,String> {
             "CODEPROF,\n" +
             "PROFESSION,\n" +
             "LIBEVILL,\n" +
-            "NVL(RC,0.0) AS RC,\n" +
-            "NVL(DR,0.0) AS DR,\n" +
-            "NVL(IC,0.0) AS IC,\n" +
-            "NVL(BDG,0.0) AS BDG,\n" +
-            "NVL(INC,0.0) AS INC,\n" +
-            "NVL(VOL,0.0) AS VOL,\n" +
-            "NVL(DTA,0.0) AS DTA,\n" +
-            "NVL(DTC,0.0) AS DTC,\n" +
-            "NVL(PRIME_NETTE,0.0) AS PRIME_NETTE,\n" +
-            "NVL(DROIT_TIMBRE,0.0) AS DROIT_TIMBRE,\n" +
-            "NVL(PRIMTOTA,0.0) AS PRIMETTC, \n" +
+            "NVL(RC,0) AS RC,\n" +
+            "NVL(DR,0) AS DR,\n" +
+            "NVL(IC,0) AS IC,\n" +
+            "NVL(BDG,0) AS BDG,\n" +
+            "NVL(INC,0) AS INC,\n" +
+            "NVL(VOL,0) AS VOL,\n" +
+            "NVL(DTA,0) AS DTA,\n" +
+            "NVL(DTC,0) AS DTC,\n" +
+            "NVL(PRIME_NETTE,0) AS PRIME_NETTE,\n" +
+            "NVL(DROIT_TIMBRE,0) AS DROIT_TIMBRE,\n" +
+            "NVL(PRIMTOTA,0) AS PRIMETTC, \n" +
             "ATTESTATION, \n" +
             "CODTYPAV, \n" +
+            "codeCivil, \n" +
             "CIVILITES \n" +
             "from ORASSADM.CIE_POOL_POL_RISQUE \n"+
             "WHERE code_cie=:codeCompagnie \n"+

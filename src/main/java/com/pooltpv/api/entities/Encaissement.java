@@ -12,6 +12,7 @@ import java.util.Date;
 @Entity
 @Data
 @NoArgsConstructor @AllArgsConstructor
+
 public class Encaissement {
     @Id
     @Column(name = "NUMEQUIT")

@@ -13,7 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonPropertyOrder({"numeQuittance","NumeroEncaissement","numePolice","numeAvenant","natureMouvement"
-        ,"codeAssure","dateEncaissement","modePaiement","refEncaissement","montantEncaisse","primeTotale","statut"})
+        ,"codeAssure","dateEncaissement","modePaiement","refEncaissement","numeCheque","montantEncaisse","primeTotale","statut"})
 public class EncaissementDTO {
     private String numeQuittance;
     private String NumeroEncaissement;
@@ -21,9 +21,11 @@ public class EncaissementDTO {
     private int numeAvenant;
     private String natureMouvement;
     private String codeAssure;
+    @JsonFormat(pattern="yyyy-MM-dd")
     private String dateEncaissement;
     private String modePaiement;
     private String refEncaissement;
+    private String numeCheque;
     private int montantEncaisse;
     private int primeTotale;
     private int statut;

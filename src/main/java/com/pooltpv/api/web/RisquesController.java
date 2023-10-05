@@ -41,7 +41,7 @@ public class RisquesController {
                                           @PathVariable(name = "dateFin")  @DateTimeFormat(pattern = "dd-MM-yyyy") String  dateFin) throws Exception {
 
         //Jwt decode = jwtDecoder.decode(token);
-
+ System.out.println(dateDebut+"/"+dateFin+"/");
         if(codeDemandeur.equals("fSwtr6IBYpVy8TIb")){
             codeCompagnie=20000;
         }else if(codeDemandeur.equals("22cDv9B3lxt6keKM")){
@@ -53,7 +53,7 @@ public class RisquesController {
         }else if(codeDemandeur.equals("MNBgcZOMdMsTfO17")){
             codeCompagnie=95000;
         }
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-uuuu")
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
                 .withResolverStyle(ResolverStyle.STRICT);
         dateFormatter.parse(dateDebut);
         dateFormatter.parse(dateFin);
@@ -62,11 +62,13 @@ public class RisquesController {
         formatter.setTimeZone(TimeZone.getTimeZone("Africa/Douala"));
         Date startDate = formatter.parse(dateDebut + " 00:00:00");
         Date endDate = formatter.parse(dateFin + " 23:59:59");
+         System.out.println(startDate+"/"+endDate+"/");
         try {
             DateValidatorUsingDateTimeFormatter dateValidatorUsingDateTimeFormatter = new DateValidatorUsingDateTimeFormatter(startDate, endDate);
-            if (dateValidatorUsingDateTimeFormatter.isDatediffValid(startDate, endDate) == true)
-
-                return risquesService.listRisquesDTO(codeCompagnie, startDate, endDate);
+             System.out.println(startDate+"/"+endDate+"/");
+            if (dateValidatorUsingDateTimeFormatter.isDatediffValid(startDate, endDate) == true){
+                System.out.println(startDate+"/"+endDate+"/");
+                return risquesService.listRisquesDTO(codeCompagnie, startDate, endDate);}
 
         }
         catch (DateDiffException e){
